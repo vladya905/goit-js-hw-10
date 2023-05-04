@@ -33,7 +33,7 @@ function onInputWrite(e) {
         return (blockEl.innerHTML = onRenderCountryCard(r));
       }
       blockEl.innerHTML = '';
-      listEl.innerHTML = onRenderList(r);
+      listEl.insertAdjacentHTML('beforeend', onRenderList(r));
     })
     .catch(error => {
       blockEl.innerHTML = '';
@@ -64,5 +64,5 @@ function onRenderCountryCard(array) {
         <p class="country-text-info"><span class="country-pre-text">Languages:</span> ${Object.values(languages)} </p>
         `
     )
-    .join();
+    .join('');
 }
